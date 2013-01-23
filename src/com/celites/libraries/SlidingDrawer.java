@@ -159,8 +159,6 @@ public class SlidingDrawer extends ViewGroup {
 		public void onDrawerOpened();
 	}
 
-	
-	
 	/**
 	 * Callback invoked when the drawer is closed.
 	 */
@@ -219,7 +217,7 @@ public class SlidingDrawer extends ViewGroup {
 	public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.MySlider, defStyle, 0);
+				R.styleable.MySlider);
 
 		int orientation = a.getInt(
 				R.styleable.MySlider_SlidingDrawer_orientation,
@@ -232,6 +230,8 @@ public class SlidingDrawer extends ViewGroup {
 				R.styleable.MySlider_SlidingDrawer_bottomOffset, 0.0f);
 		mTopOffset = (int) a.getDimension(
 				R.styleable.MySlider_SlidingDrawer_topOffset, 0.0f);
+		int test = (int) a.getDimension(
+				R.styleable.MySlider_SlidingDrawer_maxHeight, 0.0f);
 		mAllowSingleTap = a.getBoolean(
 				R.styleable.MySlider_SlidingDrawer_allowSingleTap, true);
 		mAnimateOnClick = a.getBoolean(

@@ -46,9 +46,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>leftToRight</code></td><td>0</td><td></td></tr>
-<tr><td><code>rightToLeft</code></td><td>0</td><td></td></tr>
-<tr><td><code>topToBottom</code></td><td>0</td><td></td></tr>
-<tr><td><code>bottomToTop</code></td><td>0</td><td></td></tr>
+<tr><td><code>rightToLeft</code></td><td>1</td><td></td></tr>
+<tr><td><code>topToBottom</code></td><td>2</td><td></td></tr>
+<tr><td><code>bottomToTop</code></td><td>3</td><td></td></tr>
 </table>
          */
         public static int SlidingDrawer_direction=0x7f010007;
@@ -90,13 +90,13 @@ containing a value of this type.
         public static int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static int bottomToTop=0x7f040003;
-        public static int leftToRight=0x7f040000;
-        public static int rightToLeft=0x7f040001;
-        public static int topToBottom=0x7f040002;
+        public static int bottomToTop=0x7f030003;
+        public static int leftToRight=0x7f030000;
+        public static int rightToLeft=0x7f030001;
+        public static int topToBottom=0x7f030002;
     }
     public static final class string {
-        public static int app_name=0x7f030000;
+        public static int app_name=0x7f040000;
     }
     public static final class style {
         /** 
@@ -213,9 +213,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>leftToRight</code></td><td>0</td><td></td></tr>
-<tr><td><code>rightToLeft</code></td><td>0</td><td></td></tr>
-<tr><td><code>topToBottom</code></td><td>0</td><td></td></tr>
-<tr><td><code>bottomToTop</code></td><td>0</td><td></td></tr>
+<tr><td><code>rightToLeft</code></td><td>1</td><td></td></tr>
+<tr><td><code>topToBottom</code></td><td>2</td><td></td></tr>
+<tr><td><code>bottomToTop</code></td><td>3</td><td></td></tr>
 </table>
           @attr name android:SlidingDrawer_direction
         */

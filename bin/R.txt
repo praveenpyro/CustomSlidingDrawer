@@ -8,11 +8,11 @@ int attr SlidingDrawer_maxHeight 0x7f010008
 int attr SlidingDrawer_orientation 0x7f010000
 int attr SlidingDrawer_topOffset 0x7f010002
 int drawable ic_launcher 0x7f020000
-int id bottomToTop 0x7f040003
-int id leftToRight 0x7f040000
-int id rightToLeft 0x7f040001
-int id topToBottom 0x7f040002
-int string app_name 0x7f030000
+int id bottomToTop 0x7f030003
+int id leftToRight 0x7f030000
+int id rightToLeft 0x7f030001
+int id topToBottom 0x7f030002
+int string app_name 0x7f040000
 int style AppBaseTheme 0x7f050000
 int style AppTheme 0x7f050001
 int[] styleable MySlider { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008 }
