@@ -159,6 +159,8 @@ public class SlidingDrawer extends ViewGroup {
 		public void onDrawerOpened();
 	}
 
+	
+	
 	/**
 	 * Callback invoked when the drawer is closed.
 	 */
