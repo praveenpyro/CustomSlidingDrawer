@@ -376,46 +376,39 @@ public class SlidingDrawer extends ViewGroup {
 			childLeft = (width - childWidth) / 2;
 			childTop = mExpanded ? mTopOffset : height - childHeight
 					+ mBottomOffset;
-
 			content.layout(0, mTopOffset + childHeight,
 					content.getMeasuredWidth(), mTopOffset + childHeight
 							+ content.getMeasuredHeight());
-			childRight = childLeft + childWidth;
-			childBottom = childTop + childHeight;
 		} else if (mDirection == DIRECTION_RIGHT_TO_LEFT) {
+			childTop = (height - childHeight) / 2;
 			childLeft = mExpanded ? mTopOffset : width - childWidth
 					+ mBottomOffset;
-			childTop = (height - childHeight) / 2;
 
 			content.layout(mTopOffset + childWidth, 0, mTopOffset + childWidth
 					+ content.getMeasuredWidth(), content.getMeasuredHeight());
 		} else if (mDirection == DIRECTION_TOP_TO_BOTTOM) {
-			childRight = (width - childWidth) / 2;
-			childBottom = mExpanded ? mTopOffset : height - childHeight
-					+ mBottomOffset;
+			childLeft = (width - childWidth) / 2;
+			childTop = mExpanded ? height - mBottomOffset - childHeight
+					: mTopOffset;
 
 			content.layout(0, mTopOffset + childHeight,
 					content.getMeasuredWidth(), mTopOffset + childHeight
 							+ content.getMeasuredHeight());
 
-			childLeft = childWidth - childRight;
-			childTop = childHeight - childBottom;
 		} else {
 
-			childBottom = (height - childHeight) / 2;
-			childRight = mExpanded ? mTopOffset : width - childWidth
-					+ mBottomOffset;
+			childTop = (height - childHeight) / 2;
+			childLeft = mExpanded ? width - mBottomOffset - childWidth
+					: mTopOffset;
 
-			content.layout(0, mTopOffset + childHeight,
-					content.getMeasuredWidth(), mTopOffset + childHeight
-							+ content.getMeasuredHeight());
-
-			childLeft = childRight - childWidth;
-			childTop = childBottom - childHeight;
+			content.layout(mTopOffset, 0,
+					mTopOffset + content.getMeasuredWidth(),
+					content.getMeasuredHeight());
 
 		}
 
-		handle.layout(childLeft, childTop, childRight, childBottom);
+		handle.layout(childLeft, childTop, childLeft + childWidth, childTop
+				+ childHeight);
 		mHandleHeight = handle.getHeight();
 		mHandleWidth = handle.getWidth();
 	}
