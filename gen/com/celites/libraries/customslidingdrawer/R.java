@@ -56,6 +56,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int SlidingDrawer_handle=0x7f010005;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int SlidingDrawer_handleOnClick=0x7f010009;
         /**  and we are going to add a new styleable resource maxHeight 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -128,6 +136,7 @@ containing a value of this type.
            <tr><td><code>{@link #MySlider_SlidingDrawer_content com.celites.libraries.customslidingdrawer:SlidingDrawer_content}</code></td><td></td></tr>
            <tr><td><code>{@link #MySlider_SlidingDrawer_direction com.celites.libraries.customslidingdrawer:SlidingDrawer_direction}</code></td><td></td></tr>
            <tr><td><code>{@link #MySlider_SlidingDrawer_handle com.celites.libraries.customslidingdrawer:SlidingDrawer_handle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MySlider_SlidingDrawer_handleOnClick com.celites.libraries.customslidingdrawer:SlidingDrawer_handleOnClick}</code></td><td></td></tr>
            <tr><td><code>{@link #MySlider_SlidingDrawer_maxHeight com.celites.libraries.customslidingdrawer:SlidingDrawer_maxHeight}</code></td><td> and we are going to add a new styleable resource maxHeight </td></tr>
            <tr><td><code>{@link #MySlider_SlidingDrawer_orientation com.celites.libraries.customslidingdrawer:SlidingDrawer_orientation}</code></td><td></td></tr>
            <tr><td><code>{@link #MySlider_SlidingDrawer_topOffset com.celites.libraries.customslidingdrawer:SlidingDrawer_topOffset}</code></td><td></td></tr>
@@ -138,6 +147,7 @@ containing a value of this type.
            @see #MySlider_SlidingDrawer_content
            @see #MySlider_SlidingDrawer_direction
            @see #MySlider_SlidingDrawer_handle
+           @see #MySlider_SlidingDrawer_handleOnClick
            @see #MySlider_SlidingDrawer_maxHeight
            @see #MySlider_SlidingDrawer_orientation
            @see #MySlider_SlidingDrawer_topOffset
@@ -145,7 +155,7 @@ containing a value of this type.
         public static final int[] MySlider = {
             0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
             0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
-            0x7f010008
+            0x7f010008, 0x7f010009
         };
         /**
           <p>This symbol is the offset where the {@link com.celites.libraries.customslidingdrawer.R.attr#SlidingDrawer_allowSingleTap}
@@ -230,6 +240,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name android:SlidingDrawer_handle
         */
         public static final int MySlider_SlidingDrawer_handle = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.celites.libraries.customslidingdrawer.R.attr#SlidingDrawer_handleOnClick}
+          attribute's value can be found in the {@link #MySlider} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:SlidingDrawer_handleOnClick
+        */
+        public static final int MySlider_SlidingDrawer_handleOnClick = 9;
         /**
           <p>
           @attr description

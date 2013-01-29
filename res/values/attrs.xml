@@ -17,6 +17,7 @@
         </attr>
         <!-- and we are going to add a new styleable resource maxHeight -->
         <attr name="SlidingDrawer_maxHeight" format="dimension" />
+        <attr name="SlidingDrawer_handleOnClick" format="boolean" />
     </declare-styleable>
 
 </resources>

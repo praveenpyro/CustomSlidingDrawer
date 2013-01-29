@@ -149,6 +149,7 @@ public class SlidingDrawer extends ViewGroup {
 	private final int mMaximumMajorVelocity;
 	private final int mMaximumAcceleration;
 	private final int mVelocityUnits;
+	private boolean mcanHandleOnClick;
 
 	/**
 	 * Callback invoked when the drawer is opened.
@@ -237,6 +238,8 @@ public class SlidingDrawer extends ViewGroup {
 				R.styleable.MySlider_SlidingDrawer_allowSingleTap, true);
 		mAnimateOnClick = a.getBoolean(
 				R.styleable.MySlider_SlidingDrawer_animateOnClick, true);
+		mcanHandleOnClick = a.getBoolean(
+				R.styleable.MySlider_SlidingDrawer_handleOnClick, true);
 
 		int handleId = a.getResourceId(
 				R.styleable.MySlider_SlidingDrawer_handle, 0);
@@ -278,7 +281,8 @@ public class SlidingDrawer extends ViewGroup {
 					"The handle attribute is must refer to an"
 							+ " existing child.");
 		}
-		mHandle.setOnClickListener(new DrawerToggler());
+		if (mcanHandleOnClick)
+			mHandle.setOnClickListener(new DrawerToggler());
 
 		mContent = findViewById(mContentId);
 		if (mContent == null) {
