@@ -345,7 +345,7 @@ public class SlidingDrawer extends ViewGroup {
 							handle.getLeft() - cache.getWidth(), 0, null);
 				else
 					canvas.drawBitmap(cache, 0, handle.getTop()
-							- (getBottom() - getTop()), null);
+							- (getBottom() - getTop()) + mHandleHeight, null);
 			} else {
 				canvas.save();
 
@@ -412,9 +412,8 @@ public class SlidingDrawer extends ViewGroup {
 			childTop = mExpanded ? height - mBottomOffset - childHeight
 					: mTopOffset;
 
-			content.layout(0, mTopOffset + childHeight,
-					content.getMeasuredWidth(), mTopOffset + childHeight
-							+ content.getMeasuredHeight());
+			content.layout(0, mTopOffset, content.getMeasuredWidth(),
+					mTopOffset + content.getMeasuredHeight());
 
 		} else {
 
@@ -877,6 +876,7 @@ public class SlidingDrawer extends ViewGroup {
 					deltaY = mBottomOffset + getBottom() - getTop()
 							- mHandleHeight - top;
 				}
+
 				handle.offsetTopAndBottom(deltaY);
 
 				final Rect frame = mFrame;
