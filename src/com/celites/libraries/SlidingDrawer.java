@@ -300,24 +300,36 @@ public class SlidingDrawer extends ViewGroup {
 
 		if (widthSpecMode == MeasureSpec.UNSPECIFIED
 				|| heightSpecMode == MeasureSpec.UNSPECIFIED) {
-			throw new RuntimeException(
+			// throw new RuntimeException(
+			// "SlidingDrawer cannot have UNSPECIFIED dimensions");
+			Log.w("Custom Sliding Drawer",
 					"SlidingDrawer cannot have UNSPECIFIED dimensions");
 		}
 
 		final View handle = mHandle;
+		final View content = mContent;
 		measureChild(handle, widthMeasureSpec, heightMeasureSpec);
 
 		if (mVertical) {
 			int height = heightSpecSize - handle.getMeasuredHeight()
 					- mTopOffset;
-			mContent.measure(MeasureSpec.makeMeasureSpec(widthSpecSize,
-					MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height,
-					MeasureSpec.EXACTLY));
+			content.measure(widthMeasureSpec,
+					MeasureSpec.makeMeasureSpec(height, heightSpecMode));
+			heightSpecSize = handle.getMeasuredHeight() + mTopOffset
+					+ content.getMeasuredHeight();
+			widthSpecSize = content.getMeasuredWidth();
+			if (handle.getMeasuredWidth() > widthSpecSize)
+				widthSpecSize = handle.getMeasuredWidth();
 		} else {
 			int width = widthSpecSize - handle.getMeasuredWidth() - mTopOffset;
-			mContent.measure(MeasureSpec.makeMeasureSpec(width,
-					MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(
-					heightSpecSize, MeasureSpec.EXACTLY));
+			getContent().measure(
+					MeasureSpec.makeMeasureSpec(width, widthSpecMode),
+					heightMeasureSpec);
+			widthSpecSize = handle.getMeasuredWidth() + mTopOffset
+					+ content.getMeasuredWidth();
+			heightSpecSize = content.getMeasuredHeight();
+			if (handle.getMeasuredHeight() > heightSpecSize)
+				heightSpecSize = handle.getMeasuredHeight();
 		}
 
 		setMeasuredDimension(widthSpecSize, heightSpecSize);
